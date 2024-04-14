@@ -25,7 +25,7 @@ auto_save(){
     case $x in 
 1)        
     read -p "Donner le nom du dossier a sauvegarder: " name
-    echo "$m $h * * * ./FileDir/dir.sh ; backup_folder $name" > temp_crontab   # a temp file that holds the job () how to pass the name of the folder ?
+    echo "$m $h * * * ./FileDir/dir.sh; backup_folder $name" > temp_crontab   # a temp file that holds the job () how to pass the name of the folder ?
     crontab temp_crontab  #install the job from the temp file
     rm temp_crontab  # delete the temp file
     log_operation "Auto sauvegarde du dossier : $name"
@@ -56,6 +56,7 @@ auto_save(){
     exit
 esac
 }
+
 
 # Call the function if script is executed directly (for testing)
 if [[ $0 == /* ]]; then
