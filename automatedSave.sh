@@ -32,10 +32,19 @@ auto_save(){
     ;;
 2)
     read -p "Donner le nom du fichier a sauvegarder: " name
-    backup_file "$name"
-    echo "$m $h * * * ./FileDir/file.sh ; backup_file $name" > temp_crontab
-    crontab temp_crontab
-    rm temp_crontab
+
+    # Write cron job entry to temporary file with ampersand for concurrent execution
+    echo "$minute $hour * * * /bin/bash ./FileDir/file.sh & backup_file $name" > temp_crontab
+
+    # Install cron job and handle potential errors
+    if crontab temp_crontab; then
+      echo "Cron job successfully installed."
+      rm temp_crontab
+    else
+      echo "Failed to install cron job. Check for errors."
+      cat temp_crontab  # Optionally display the cron job entry for debugging
+    fi
+
     log_operation "Auto sauvegarde du fichier : $name"
     ;;
 3)
