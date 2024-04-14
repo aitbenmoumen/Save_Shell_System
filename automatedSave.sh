@@ -4,16 +4,16 @@ source fun.sh
 # Function to make a backup auto 
 get_cron_details() {
   echo "Programmer une sauvegarde avec cron:"
-  read -p "Entrer a quelle minute (0-59): " minute
+  read -p "Entrer a quelle minute (0-59): " m
   while [[ "$minute" -lt 0 || "$minute" -gt 59 ]]; do
     echo "Non valide !!. Svp enter une valeur entre 0 et 59."
-    read -p "Entrer a quelle minute (0-59): " minute
+    read -p "Entrer a quelle minute (0-59): " m
   done
 
-  read -p "Entrer a quelle heure (0-23): " hour
+  read -p "Entrer a quelle heure (0-23): " h
   while [[ "$hour" -lt 0 || "$hour" -gt 23 ]]; do
     echo "Non valide !!. Svp enter une valeur entre 0 et 23."
-    read -p "Entrer a quelle heure (0-23): " hour
+    read -p "Entrer a quelle heure (0-23): " h
   done
 }
 
@@ -34,7 +34,7 @@ auto_save(){
     read -p "Donner le nom du fichier a sauvegarder: " name
 
     # Write cron job entry to temporary file with ampersand for concurrent execution
-    echo "$minute $hour * * * /bin/bash ./FileDir/file.sh & backup_file $name" > temp_crontab
+    echo "$m $h * * * ./FileDir/file.sh; backup_file $name" > temp_crontab
 
     # Install cron job and handle potential errors
     if crontab temp_crontab; then
