@@ -5,6 +5,16 @@ source FileDir/file.sh
 source FileDir/dir.sh
 CONFIG_FILE="config.txt"
 
+#colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' #no color
+#styles
+BOLD='\033[1m'
+UNDERLINE='\033[4m'
+
 success=0
 
 # Function to get user input for backup location
@@ -26,19 +36,20 @@ check_and_create_backup_dir() {
 
 # Function to display directory listing
 list_files_and_folders() {
-  echo "--------Les dossiers/fichiers en cette emplacement---------"
+  echo -e "${BLUE}${BOLD}--------Les dossiers/fichiers en cette emplacement--------- ${NC}"
   ls
-  echo "-----------------------------------------------------------"
+  echo -e "${BLUE}${BOLD}-----------------------------------------------------------${NC}"
 }
 
 # Function to get user choice for treatment type in the main func
 get_backup_choice_main() {
-  echo "Que vous voulez Faire ?"
-  echo "1-Sauvegarder un dossier"
-  echo "2-Sauvegarder un fichier"
-  echo "3-Automatiser une sauvegarde"
-  echo "0-Quitter"
-  read -p "Saisir votre choix: " choix
+  echo -e "${GREEN}${BOLD}Que vous voulez Faire ?${NC}"
+  echo "      1-Lister les elements de votre espace personnel"
+  echo "      2-Sauvegarder un dossier"
+  echo "      3-Sauvegarder un fichier"
+  echo "      4-Automatiser une sauvegarde"
+  echo "      0-Quitter"
+  read -p "       Saisir votre choix: " choix
 }
 
 
