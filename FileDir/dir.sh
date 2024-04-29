@@ -16,7 +16,7 @@ log_operation() {
 backup_folder() {
   local name="$1"
 
-  if [ ! -d "$name" ]; then
+  if [ ! -d "$chemain/$name" ]; then
     echo "Ce dossier n'existe pas !!!"
   else
     if zip -r "$name.zip" "$name" && mv "$name.zip" "$chemain/backups"; then

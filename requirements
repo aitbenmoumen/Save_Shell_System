@@ -1,0 +1,10 @@
+#!/bin/bash
+source fun.sh
+echo -e "${BLUE}${BOLD}Cette operation vas installer tout les prérequis pour le bon fonctionnement du script ${NC}"
+echo -e "${RED}${BOLD}${UNDERLLINE}Il se peux que vous devez saisir votre mot de passe machine pour une premiere fois ! ${NC}"
+sudo apt update
+clear
+sudo apt install zip
+clear 
+sudo apt install tree
+clear
