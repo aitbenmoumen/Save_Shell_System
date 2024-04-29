@@ -16,14 +16,14 @@ log_operation() {
 backup_folder() {
   local name="$1"
 
-  if [ ! -d "$chemain/$name" ]; then
-    echo "Ce dossier n'existe pas !!!"
-  else
+  if [ -d "$chemain/$name" ]; then
     if zip -r "$name.zip" "$name" && mv "$name.zip" "$chemain/backups"; then
       success=1
       log_operation "Sauvegarde du dossier: $name"
     else
       echo "Erreur lors de la compression !"
     fi
+  else
+    echo "Ce dossier n'existe pas !!!"
   fi
 }
