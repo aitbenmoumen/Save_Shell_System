@@ -2,9 +2,11 @@
 source fun.sh
 source automatedSave.sh
 # Main script execution flow
+if [ ! -f "./flag_file" ]; then
+    bash ./requirements
+    touch "./flag_file"
+fi
 
-
-bash ./requirements
 logo
 echo -e "${BLUE}${BOLD}------------BIENVENUE DANS SAVESHELL-------------${NC}"
 get_backup_location
