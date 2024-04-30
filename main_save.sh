@@ -29,8 +29,8 @@ case $choix in
     backup_file "$name"
     ;;
   4)
-    auto_save
-    ;;
+    schedule_backup
+  ;;
   5)
     tuto
     ;;
