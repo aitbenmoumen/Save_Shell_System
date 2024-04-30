@@ -15,9 +15,10 @@ case $choix in
     list_files_and_folders
     ;;
   2)
-    ls ~
-    read -p "Donner le nom du dossier a sauvegarder: " name
-    backup_folder "$name"
+  ls ~
+  read -p "Donner le chemin absolu du dossier à sauvegarder (sans inclure le nom du dossier) : " emplacement
+  read -p "Donner le nom du dossier à sauvegarder : " name
+  backup_folder "$emplacement" "$name"
     ;;
   3)
     ls ~
