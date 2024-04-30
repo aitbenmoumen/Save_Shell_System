@@ -3,6 +3,7 @@ source fun.sh
 source automatedSave.sh
 # Main script execution flow
 
+
 bash ./requirements
 logo
 echo -e "${BLUE}${BOLD}------------BIENVENUE DANS SAVESHELL-------------${NC}"
