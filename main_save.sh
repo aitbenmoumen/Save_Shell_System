@@ -22,7 +22,7 @@ case $choix in
     ;;
   3)
     ls ~
-    read -p "Donner le nom du fichier a sauvegarder: " name
+    read -p "Donner le chemin absolu du fichier a sauvegarder: " name
     backup_file "$name"
     ;;
   4)
