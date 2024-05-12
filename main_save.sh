@@ -19,9 +19,9 @@ case $choix in
     ;;
   2)
   ls ~
-  read -p "Donner le chemin absolu du dossier à sauvegarder (sans inclure le nom du dossier) : " emplacement
+  read -p "Donner le chemin du dossier à partir d'espace personnel (sans inclure le nom du dossier) : " emplacement
   read -p "Donner le nom du dossier à sauvegarder : " name
-  backup_folder "$emplacement" "$name"
+  backup_folder "/home/$USER/$emplacement" "$name"
     ;;
   3)
     ls ~

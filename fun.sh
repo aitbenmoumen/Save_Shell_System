@@ -19,8 +19,7 @@ success=0
 
 # Function to get user input for backup location
 get_backup_location() {
-  read -p "Nom d'utilisateur :" user
-  chemain="/home/$user/"
+  chemain="/home/$USER/"
 
   check_and_create_backup_dir "$chemain"  # Call function to check and create dir
 }
