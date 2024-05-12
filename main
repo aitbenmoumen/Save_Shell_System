@@ -1,7 +1,0 @@
-#!/bin/bash
-source menu
-#source sauvegarde
-
-
-main_menu
-
