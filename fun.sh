@@ -63,9 +63,9 @@ log_operation() {
   echo "$(date)------------------------------" >> "$chemain/backups/operations_history"
   echo "$message" >> "$chemain/backups/operations_history"
   if [ "$success" -eq 1 ]; then
-    echo "Done with success !" >> "$chemain/backups/operations_history"
+    echo "Compression du dossier terminée avec succès." >> "$chemain/backups/operations_history"
   else
-    echo "Failed !!" >> "$chemain/backups/operations_history"
+    echo "Erreur lors de la compression du dossier." >> "$chemain/backups/operations_history"
   fi
 }
 
@@ -80,8 +80,6 @@ get_backup_choice() {
 tuto(){
   echo -e "${RED}${BOLD}--------Bienvenue dans le tuto de SaveShell--------${NC}"
 echo -e "${BLUE}${BOLD}Ceci est un petit tuto pour vous familiariser avec l'utilisation de SaveShell${NC}"
-echo -e "${YELLOW} Premierement vous devez saisir votre username: ${NC}"
-read use
 echo -e "${YELLOW} Ensuite vous devez choisir ce que vous voulez faire ! ${NC}"
 get_backup_choice_main
 while [ $choix != '0' ]; do
