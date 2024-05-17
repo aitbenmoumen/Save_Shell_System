@@ -22,12 +22,5 @@ clone the repository
 ```bash
 git clone https://github.com/aitbenmoumen/Save_Shell_System.git
 ```
-
-execute the main.sh script `bash main_save.sh`
-
-otherwise source bashin within another script:
-```bash
-<path>/bashin
-# or
-. <path>/bashin
-```
+## Video:
+https://github.com/aitbenmoumen/Save_Shell_System/assets/140988941/7bd32a55-1dc9-4b8c-92f0-aa4f59944e07
