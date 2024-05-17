@@ -20,7 +20,7 @@ SaveShell is a lightweight backup management system implemented in shell scripti
 ## Manual Setup
 clone the repository
 ```bash
-git clone https://github.com/aitbenmoumen/Save-Shell-System.git
+git clone https://github.com/aitbenmoumen/Save_Shell_System.git
 ```
 
 execute the main.sh script `bash main_save.sh`
